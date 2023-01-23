@@ -7,7 +7,7 @@ interface ITodo {
   description: string;
 }
 
-type TodoContextType = {
+interface TodoContextType {
   todos: ITodo[];
   addTodo: (todo: ITodo) => void;
   deleteTodo: (id: number) => void;
@@ -49,7 +49,7 @@ const TodoProvider = ({ children } : {children: React.ReactNode}) => {
   }
 
   const deleteTodo = (id:number) => {
-    setTodos(todos.filter(item => item.id !== id))
+    setTodos(todos.filter((item:ITodo) => item.id !== id))
   }
 
    return <TodoContext.Provider value={{ todos, addTodo, deleteTodo, filterTodos }}>{children}</TodoContext.Provider>;

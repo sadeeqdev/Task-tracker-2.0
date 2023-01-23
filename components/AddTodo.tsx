@@ -48,7 +48,6 @@ const AddTodo:React.FC<TodoProps> = (props: TodoProps) => {
 
   };
 
-
   return (
     <>
     {open ? (
